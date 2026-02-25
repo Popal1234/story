@@ -1,3 +1,7 @@
+go to github create new repository
+copy repository url
+go to vs-code open terminal
+git remote add origin paste url
 git add . 
 git commit -m "updated"
 git push -u origin master
