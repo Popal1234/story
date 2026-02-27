@@ -6,3 +6,8 @@ git add .
 git commit -m "updated"
 git push -u origin master
 git clone https://github.com/Popal1234/story.git
+
+git branch
+git branch phara
+git checkout phara
+git merge phara
