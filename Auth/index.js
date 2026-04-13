@@ -30,30 +30,11 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-    const email = req.body.username;
-    const password = req.body.password;
- try{
-  const checkResult = await db.query("Select * from users where email = $1", [email]);
-  if(checkResult.rows.length>0){
-    res.send("Email Already exists.");
-  }else{ 
-      const result = await db.query("INSERT INTO users (email, password) VALUES ($1, $2) ", [email, password]);
-      console.log(result);
-      res.render("secrets.ejs")}
-  }catch (err){console.log(err);};
+
 });
 
 app.post("/login", async (req, res) => {
-    const email = req.body.username;
-    const password = req.body.password;
- try{
-  const checkResult = await db.query("Select * from users where email = $1", [email]);
-  if(checkResult.rows.length>0){
-    res.render("secrets.ejs");
-  }else{ 
-      res.send("Please register")
-      }
-  }catch (err){console.log(err);};
+
 });
 
 
