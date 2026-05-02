@@ -1,13 +1,39 @@
-go to github create new repository
-copy repository url
-go to vs-code open terminal
-git remote add origin paste url
-git add . 
-git commit -m "updated"
-git push -u origin master
-git clone https://github.com/Popal1234/story.git
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Timer</title>
+</head>
+<body>
 
-git branch
-git branch phara
-git checkout phara
-git merge phara
+<h1 id="display">0</h1>
+
+<button onclick="startTimer()">Start</button>
+<button onclick="stopTimer()">Stop</button>
+<button onclick="resetTimer()">Reset</button>
+
+<script>
+  let time = 0;
+  let interval = null;
+
+  function startTimer() {
+    if (interval) return; // prevent multiple timers
+    interval = setInterval(() => {
+      time++;
+      document.getElementById("display").innerText = time;
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(interval);
+    interval = null;
+  }
+
+  function resetTimer() {
+    stopTimer();
+    time = 0;
+    document.getElementById("display").innerText = time;
+  }
+</script>
+
+</body>
+</html>
